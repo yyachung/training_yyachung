@@ -1,0 +1,52 @@
+---
+title: "NCEAS"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load packages}
+library(readr)
+```
+
+
+##Introduction
+
+* read in and reference data source
+
+```{r read data, message=FALSE}
+bg_chem <- read_csv("BGchem2008data.csv")
+head(bg_chem)
+```
+
+
+##Analysis
+
+* Calculate summary stats
+
+
+```{r}
+mean.NO3 <-mean(bg_chem$NO3)
+mean.NO2 <-mean(bg_chem$NO2)
+mean.NH4 <-mean(bg_chem$NH4)
+mean.P <-mean(bg_chem$P)
+
+```
+
+
+* Calculate mean redfield ratio
+
+```{r}
+red <- (mean.NO3+mean.NO2+mean.NH4)/mean.P
+```
+
+We calculated the Redfield ratio to be `r round(red, 2)`.
+
+* Plot ratio
+
+```{r, echo=F}
+plot(bg_chem$P, bg_chem$NO3+bg_chem$NO2+bg_chem$NH4)
+```
+
