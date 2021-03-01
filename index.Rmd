@@ -4,3 +4,5 @@ output: html_document
 ---
 
 Hello
+
+* Here is a link to the intro R markdown [Introduction](./markdown-intro.html)
