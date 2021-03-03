@@ -2,6 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
-.csv
-
 shapefiles/
+Utqiagvik_predator_surveys.csv
+Utqiagvik_nest_data.csv
